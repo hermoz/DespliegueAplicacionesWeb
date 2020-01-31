@@ -1,0 +1,40 @@
+Antes de nada tenemos que hacer un docker pull mysql:5.7, tener creada una carpeta que será nuestro volumen y tener el script dentro de esa carpeta o copiarla posteriormente con cp
+
+- sudo docker run --name contmysql -v /home/estudiante/data1:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7
+
+- sudo docker container ls -a --> Para ver los contenedores existentes
+
+- sudo docker exec -it 5bacc113676d bash --> Ejecuta el contenedor 5bacc113676d
+
+- cp /var/lib/mysql/universidad.sql . --> Copiamos el script en /var/lib/mysql
+
+- mysql -u root -p --> Para acceder a la consola de mysql
+
+- mysql> create database universidad; --> Creamos la base de datos
+
+- mysql> use universidad; --> Seleccionamos la base de datos
+
+- mysql> source universidad.sql
+
+- mysql> grant all privileges on universidad.* to 'usuario1' identified by 'usuario1'; --> Damos permisos
+
+- mysql> exit --> Salimos
+
+- mysql -u usuario1
+
+- use universidad;
+
+- mysql> select * from asignatura;
+
+- exit --> Salimos del contenedor
+
+- sudo docker stop 5bacc113676d --> Paramos el contenedor
+
+- sudo docker  exec  -it contmysql bash --> Ejecutamos el contenedor
+
+- mysql -u usuario1 -p --> Ponemos usuario1 
+
+- exit --> Salimos
+
+
+
