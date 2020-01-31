@@ -6,9 +6,9 @@ Antes de nada tenemos que hacer un docker pull mysql:5.7, tener creada una carpe
 
 - sudo docker exec -it 5bacc113676d bash --> Ejecuta el contenedor 5bacc113676d
 
-- cp /var/lib/mysql/universidad.sql . --> Copiamos el script en /var/lib/mysql
+- cp /var/lib/mysql/universidad.sql . --> Copiamos el script en nuestro volumen
 
-- mysql -u root -p --> Para acceder a la consola de mysql
+- sudo mysql -u root -p --> Para acceder a la consola de mysql
 
 - mysql> create database universidad; --> Creamos la base de datos
 
@@ -20,7 +20,7 @@ Antes de nada tenemos que hacer un docker pull mysql:5.7, tener creada una carpe
 
 - mysql> exit --> Salimos
 
-- mysql -u usuario1
+- mysql -u usuario1 -p
 
 - use universidad;
 
